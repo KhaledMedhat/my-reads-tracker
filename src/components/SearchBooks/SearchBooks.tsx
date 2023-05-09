@@ -1,9 +1,9 @@
-import { Book } from "../../store/services/books";
+import { Book } from "../../store/services/bookTypes";
 import { Link } from "react-router-dom";
 import classes from "./SearchBooks.module.css";
+import { UpdatedShelf } from "../../store/services/bookTypes";
 import React from "react";
 import {
-  UpdatedShelf,
   useGetAllBooksQuery,
   useUpdateBookShelfMutation,
 } from "../../store/services/books";

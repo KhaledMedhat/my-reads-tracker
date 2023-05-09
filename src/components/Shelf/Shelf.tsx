@@ -1,8 +1,6 @@
 import classes from "./Shelf.module.css";
-import {
-  useUpdateBookShelfMutation,
-  UpdatedShelf,
-} from "../../store/services/books";
+import { UpdatedShelf } from "../../store/services/bookTypes";
+import { useUpdateBookShelfMutation } from "../../store/services/books";
 import { ChangeEvent } from "react";
 
 import React from "react";

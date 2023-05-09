@@ -3,8 +3,8 @@ import SearchButton from "../../components/SearchButton/SearchButton";
 import Shelf from "../../components/Shelf/Shelf";
 import classes from "./BookShelves.module.css";
 import React from "react";
+import { UpdatedShelf } from "../../store/services/bookTypes";
 import {
-  UpdatedShelf,
   useGetAllBooksQuery,
   useUpdateBookShelfMutation,
 } from "../../store/services/books";
@@ -69,6 +69,7 @@ const BookShelves: React.FC = () => {
     <>
       <Header />
       <div
+        role="draggedDiv"
         id="currentlyReading"
         ref={currentlyReading}
         onDragOver={idTracerHandler}

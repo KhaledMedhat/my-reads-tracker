@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect, ChangeEvent } from "react";
-import { SearchedBooks, SearchData } from "../../store/services/books";
+import { SearchedBooks, SearchData } from "../../store/services/bookTypes";
 import classes from "./SearchPage.module.css";
 import { useGetBookSearchMutation } from "../../store/services/books";
 import SearchBooks from "../../components/SearchBooks/SearchBooks";
