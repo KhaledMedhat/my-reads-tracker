@@ -1,0 +1,31 @@
+.header {
+  background-color: #2e7d32;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1.5rem 0;
+  display: flex;
+  text-decoration: none;
+}
+
+.title a {
+  font-size: 2rem;
+}
+.title {
+  color: white;
+  text-decoration: none;
+}
+.account {
+  color: white;
+  font-size: 1.2rem;
+}
+.logout {
+  color: white;
+  text-decoration: none;
+}
+.logout:hover {
+  text-decoration: underline;
+}
+
+.logout a {
+  font-size: 1.2rem;
+}

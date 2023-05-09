@@ -1,0 +1,41 @@
+.container {
+  display: grid;
+  grid-template-areas: "image info";
+  grid-template-columns: 0.6fr 1fr;
+}
+
+.book-image {
+  grid-area: image;
+  width: 60%;
+  height: 80%;
+  margin: 100px auto;
+}
+
+.book-details {
+  grid-area: info;
+  display: flex;
+  margin-top: 80px;
+  width: 80%;
+  flex-direction: column;
+}
+.title {
+  text-align: center;
+}
+.authors {
+  text-align: center;
+  color: grey;
+}
+
+.header {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.publish {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
