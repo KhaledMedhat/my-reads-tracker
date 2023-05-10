@@ -40,6 +40,7 @@ const Shelf: React.FC<{
         />
         <div className={classes["book-shelf-changer"]}>
           <select
+            placeholder="select"
             onChange={(e) => optionsChangeHandler(e, props.id)}
             name="shelves"
             id="shelves"

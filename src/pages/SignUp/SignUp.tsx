@@ -1,14 +1,11 @@
 import { useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
-// import { useDispatch } from "react-redux";
 import classes from "./SignUp.module.css";
 import React from "react";
-// import { setToken } from "../../store/slices/tokenSlice";
 const SignUp = () => {
   const emailInput = useRef<HTMLInputElement>(null);
   const passwordInput = useRef<HTMLInputElement>(null);
   const usernameInput = useRef<HTMLInputElement>(null);
-  // const dispatch = useDispatch();
   const navigate = useNavigate();
   const signupSubmitHandler = (e: React.FormEvent) => {
     e.preventDefault();

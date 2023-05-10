@@ -27,11 +27,7 @@ const SearchBooks: React.FC<{
       shelf: e.target.value,
     };
 
-    try {
-      await shelf(shelfUpdateRequest).unwrap();
-    } catch (err) {
-      throw new Error("Something wrong happened");
-    }
+    await shelf(shelfUpdateRequest).unwrap();
   };
   return (
     <div className={classes["filtered-books-container"]}>
@@ -57,6 +53,7 @@ const SearchBooks: React.FC<{
               ))}
               <div className={classes["book-shelf-changer"]}>
                 <select
+                  placeholder="select"
                   onChange={(e) => optionsChangeHandler(e, book.id)}
                   name="shelves"
                   id="shelves"

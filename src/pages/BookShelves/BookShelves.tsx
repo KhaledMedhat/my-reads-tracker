@@ -69,6 +69,7 @@ const BookShelves: React.FC = () => {
     <>
       <Header />
       <div
+        data-testid="draggable"
         role="draggedDiv"
         id="currentlyReading"
         ref={currentlyReading}
@@ -98,6 +99,7 @@ const BookShelves: React.FC = () => {
         </div>
       </div>
       <div
+        data-testid="draggable"
         id="wantToRead"
         ref={wantToRead}
         onDragOver={idTracerHandler}
@@ -127,6 +129,7 @@ const BookShelves: React.FC = () => {
         </div>
       </div>
       <div
+        data-testid="draggable"
         id="read"
         ref={read}
         onDragOver={idTracerHandler}

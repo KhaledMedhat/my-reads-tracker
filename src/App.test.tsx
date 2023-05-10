@@ -10,6 +10,8 @@ describe("Loading App", () => {
       </TestingWrapper>,
     );
 
-    expect(screen.getByText("My-Reads")).toBeInTheDocument();
+    expect(
+      screen.getByText("Setup your credintials to register"),
+    ).toBeInTheDocument();
   });
 });
