@@ -5,7 +5,6 @@ const Header = () => {
   const accountName = JSON.parse(localStorage.getItem("account") || "{}");
   const logoutHandler = () => {
     localStorage.removeItem("token");
-    localStorage.removeItem("account");
   };
   return (
     <header className={classes.header}>

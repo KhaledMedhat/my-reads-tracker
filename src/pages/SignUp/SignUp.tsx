@@ -18,8 +18,6 @@ const SignUp = () => {
       email: emailInput.current?.value,
     };
     localStorage.setItem("account", JSON.stringify(formValues));
-    // const token = localStorage.setItem("token", JSON.stringify("12321321"));
-    // dispatch(setToken(token));
     navigate("/SignIn");
   };
   return (

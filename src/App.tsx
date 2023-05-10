@@ -8,9 +8,7 @@ import React, { useEffect } from "react";
 
 function App() {
   const navigate = useNavigate();
-
   const token = localStorage.getItem("token");
-
   useEffect(() => {
     if (!token) {
       navigate("/SignUp");

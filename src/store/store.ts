@@ -1,7 +1,6 @@
 import { configureStore, ConfigureStoreOptions } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { booksApi } from "./services/books";
-import tokenReducer from "./slices/tokenSlice";
 
 export const createStore = (
   options?: ConfigureStoreOptions["preloadedState"] | undefined,
@@ -9,7 +8,6 @@ export const createStore = (
   configureStore({
     reducer: {
       [booksApi.reducerPath]: booksApi.reducer,
-      token: tokenReducer,
     },
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware().concat(booksApi.middleware),

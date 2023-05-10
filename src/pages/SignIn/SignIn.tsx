@@ -14,6 +14,7 @@ const SignIn = () => {
     const emailValue = emailInput.current?.value;
     const passwordValue = passwordInput.current?.value;
     if (emailValue === account?.email && passwordValue === account?.password) {
+      localStorage.setItem("token", JSON.stringify(emailValue));
       navigate("/");
     } else {
       setError("Email or Password is Incorrect!");

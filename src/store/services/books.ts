@@ -9,13 +9,13 @@ import {
 
 export type BookResponse = Book[];
 export const url = "https://reactnd-books-api.udacity.com";
-let token = localStorage.token;
-if (!token) token = localStorage.token = Math.random().toString(36).substr(-8);
-const headers = {
-  Accept: "application/json",
-  Authorization: token,
+const handleAuth = (): { Accept: string; Authorization: string } => {
+  const token = localStorage.getItem("token");
+  return {
+    Accept: "application/json",
+    Authorization: token || "",
+  };
 };
-
 export const booksApi = createApi({
   reducerPath: "bookApi",
   baseQuery: fetchBaseQuery({
@@ -26,7 +26,7 @@ export const booksApi = createApi({
     getAllBooks: builder.query<SearchedBooks, void>({
       query: () => ({
         url: `/books`,
-        headers: headers,
+        headers: handleAuth(),
       }),
       providesTags: ["Books"],
     }),
@@ -34,10 +34,7 @@ export const booksApi = createApi({
       query: (credentials) => ({
         url: `/search`,
         method: "POST",
-        headers: {
-          accept: "application/json",
-          authorization: token || "",
-        },
+        headers: handleAuth(),
         body: credentials,
       }),
       invalidatesTags: ["Books"],
@@ -46,10 +43,7 @@ export const booksApi = createApi({
       query: (args) => ({
         url: `/books/${args.id}`,
         method: "PUT",
-        headers: {
-          accept: "application/json",
-          authorization: token || "",
-        },
+        headers: handleAuth(),
         body: { shelf: args.shelf },
       }),
       invalidatesTags: ["Books"],
@@ -57,10 +51,7 @@ export const booksApi = createApi({
     getBookDetails: builder.query<BookObject, string | undefined>({
       query: (id) => ({
         url: `/books/${id}`,
-        headers: {
-          accept: "application/json",
-          authorization: token || "",
-        },
+        headers: handleAuth(),
       }),
       providesTags: ["Books"],
     }),
