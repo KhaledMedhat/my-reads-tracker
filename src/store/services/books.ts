@@ -9,7 +9,13 @@ import {
 
 export type BookResponse = Book[];
 export const url = "https://reactnd-books-api.udacity.com";
-const token = localStorage.getItem("token");
+let token = localStorage.token;
+if (!token) token = localStorage.token = Math.random().toString(36).substr(-8);
+const headers = {
+  Accept: "application/json",
+  Authorization: token,
+};
+
 export const booksApi = createApi({
   reducerPath: "bookApi",
   baseQuery: fetchBaseQuery({
@@ -20,10 +26,7 @@ export const booksApi = createApi({
     getAllBooks: builder.query<SearchedBooks, void>({
       query: () => ({
         url: `/books`,
-        headers: {
-          accept: "application/json",
-          authorization: token || "",
-        },
+        headers: headers,
       }),
       providesTags: ["Books"],
     }),
