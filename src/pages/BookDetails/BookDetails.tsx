@@ -7,7 +7,6 @@ import React from "react";
 const BookDetails = () => {
   const params = useParams();
   const { data: bookDetails } = useGetBookDetailsQuery(params.bookid);
-
   return (
     <>
       <Header />
